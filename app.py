@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-from util import num_tokens_from_string
+from util import num_tokens_from_string, num_tokens_from_string_aleph_alpha
 
 f = open('data/model_metadata.json')
 model_metadata = json.load(f)
@@ -8,7 +8,7 @@ model_metadata = json.load(f)
 use_cases = ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification", "Conversational", "Code Generation", "Sentence Similarity", "Semantic Search"]
 
 st.title("LLMCostMate")
-st.write("Find out how much your LLM will cost you")
+st.write("Accurate Large Language Model (LLM) pricing in a snap. Select from top providers, input your text, and get instant cost estimates.")
 
 with st.expander("**Step 1: Select modality**"):
     selected_modality = st.selectbox(label="modality",
@@ -72,7 +72,10 @@ with st.expander("**Step 5: Enter/Paste your input prompt text**"):
                               key=None)
     
     # Calculate number of tokens for the input string
-    num_input_tokens = num_tokens_from_string(input_text, model_name=selected_model)
+    if selected_provider == "OpenAI":
+        num_input_tokens = num_tokens_from_string(input_text, model_name=selected_model)
+    elif selected_provider == "Aleph Alpha":
+        num_input_tokens = num_tokens_from_string_aleph_alpha(input_text, model_name=selected_model)
     # if st.button("Calculate number of tokens", use_container_width=True):
     st.write(f"Your input text has **{num_input_tokens}** tokens.")
 
