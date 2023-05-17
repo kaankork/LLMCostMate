@@ -1,0 +1,244 @@
+{
+    "Text": 
+    {
+        "OpenAI": {
+          "url": "https://www.openai.com",
+          "url_pricing": "https://www.openai.com/pricing",
+          "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification", "Conversational", "Code Generation", "Sentence Similarity", "Semantic Search"],
+          "models": [
+                {
+                    "name": "gpt-4",
+                    "version": "8K context",
+                    "description": "With broad general knowledge and domain expertise, GPT-4 can follow complex instructions in natural language and solve difficult problems with accuracy.",
+                    "prompt_cost": 0.03,
+                    "completion_cost": 0.06,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 8192,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "gpt-4-32k",
+                    "version": "32K context",
+                    "description": "With broad general knowledge and domain expertise, GPT-4 can follow complex instructions in natural language and solve difficult problems with accuracy.",
+                    "cost": 0.06,
+                    "prompt_cost": 0.06,
+                    "completion_cost": 0.12,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 32768,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "gpt-3.5-turbo",
+                    "version": "32K context",
+                    "description": "ChatGPT models are optimized for dialogue. The performance of gpt-3.5-turbo is on par with Instruct Davinci.",
+                    "prompt_cost": 0.002,
+                    "completion_cost": 0.002,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 32768,
+                    "use_cases": ["Conversational", "Code Generation"]
+                },
+                {
+                    "name": "text-ada-001",
+                    "version": "-",
+                    "description": "Capable of very simple tasks, usually the fastest model in the GPT-3 series, and lowest cost.",
+                    "prompt_cost": 0.0004,
+                    "completion_cost": 0.0004,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 2048,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "text-babbage-001",
+                    "version": "-",
+                    "description": "Capable of straightforward tasks, very fast, and lower cost.",
+                    "prompt_cost": 0.0005,
+                    "completion_cost": 0.0005,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 2048,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "text-curie-001",
+                    "version": "-",
+                    "description": "Very capable, but faster and lower cost than Davinci.",
+                    "prompt_cost": 0.0020,
+                    "completion_cost": 0.0020,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 2048,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "text-davinci-001",
+                    "version": "-",
+                    "description": "Most capable GPT-3 model. Can do any task the other models can do, often with higher quality.",
+                    "prompt_cost": 0.02,
+                    "completion_cost": 0.02,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 2048,
+                    "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                },
+                {
+                    "name": "text-embedding-ada-002",
+                    "version": "-",
+                    "description": "text-embedding-ada-002 outperforms all the old embedding models on text search, code search, and sentence similarity tasks and gets comparable performance on text classification.",
+                    "prompt_cost": 0.0004,
+                    "completion_cost": 0.0004,
+                    "cost_currency": "$",
+                    "cost_unit": " / 1K tokens",
+                    "max_tokens": 2048,
+                    "use_cases": ["Sentence Similarity", "Semantic Search"]
+                }  
+            ]
+        },
+        "Aleph Alpha": {
+          "url": "https://www.aleph-alpha.com/",
+          "url_pricing": "https://www.aleph-alpha.com/pricing",
+          "use_cases": {
+            "Complete": "The complete-endpoint is the basic interface to our models. You can send a prompt, which can be any combination of texts and images, to generate a (text) completion.",
+            "Evaluate":"The evaluate-endpoint you can score the likelihood of pre-defined completions. This is useful if you already know the output you would expect and which completion our models would return. The major advantage is that the evaluate-endpoint is significantly faster than the complete-endpoint.",
+            "Embed":"With the embed-endpoint you can embed any prompt into vector space.",
+            "Semantic Embed":"With the semantic_embed-endpoint you can create semantic embeddings for your text. There are two possible ways to use the semantic_embed-endpoint. If you have texts with a dissimilar structure (e.g. a Document and a Query) you would want to use asymmetric embeddings. Contrary, if you have texts of similar structure, you would want to use symmetric embeddings.",
+            "Summarize":"The summarize-endpoint can be used to generate summaries for longer texts.",
+            "Question Answering":"The qa-endpoint can be used to answer questions about one or more documents. To do this, you must specify both the document(s) and a question.",
+            "(De)-Tokenize":"With the tokenize-endpoint you can use our own tokenizer to tokenize your texts for further use. Next to that you can also detokenize these texts with the detokenize-endpoint."
+          },
+          "models": [
+            {
+                "name": "base",
+                "version": "-",
+                "description": "-",
+                "cost": 0.006,
+                "cost_currency": "€",
+                "cost_unit": " / 1K tokens",
+                "max_tokens": 2048,
+                "use_cases":["Complete", "Evaluate", "Embed", "Semantic Embed", "Summarize", "Question Answering", "(De)-Tokenize", "Explain"]
+            },
+            {
+                "name": "extended",
+                "version": "-",
+                "description": "-",
+                "cost": 0.009,
+                "cost_currency": "€",
+                "cost_unit": " / 1K tokens",
+                "max_tokens": 2048,
+                "use_cases":["Complete", "Evaluate", "Embed", "Semantic Embed", "Summarize", "Question Answering", "(De)-Tokenize", "Explain"]
+            },
+            {
+                "name": "supreme",
+                "version": "-",
+                "description": "-",
+                "cost": 0.035,
+                "cost_currency": "€",
+                "cost_unit": " / 1K tokens",
+                "max_tokens": 2048,
+                "use_cases":["Complete", "Evaluate", "Embed", "Semantic Embed", "Summarize", "Question Answering", "(De)-Tokenize", "Explain"]
+            },
+            {
+                "name": "supreme-control",
+                "version": "-",
+                "description": "-",
+                "cost": 0.04375,
+                "cost_currency": "€",
+                "cost_unit": " / 1K tokens",
+                "max_tokens": 2048,
+                "use_cases":["Complete", "Evaluate", "Embed", "Semantic Embed", "Summarize", "Question Answering", "(De)-Tokenize", "Explain"]
+            }
+          ],
+          "factor_input_tokens": {
+            "Complete": 1.0,
+            "Evaluate": 1.1,
+            "Embed":1.3,
+            "Semantic Embed": 1.3,
+            "Question Answering": 1.3,
+            "Summarize": 1.3,
+            "(De)-Tokenize": 0.5
+          },
+          "factor_output_tokens": {
+            "Complete": 1.1,
+            "Evaluate": 1.1,
+            "Embed":1,
+            "Semantic Embed": 1,
+            "Question Answering": 1.1,
+            "Summarize": 1.1,
+            "(De)-Tokenize": 1
+          }
+        },
+        "Cohere (Coming Soon)": {
+            "url": "https://www.cohere.com",
+            "url_pricing": "https://www.cohere.com/pricing",
+            "use_cases": {
+                "Embed": "Embeddings perform best when the text to be embedded is less than 512 tokens. You can create up to 96 embeddings per API call.",
+                "Generate": "Cohere counts generation units based on the total number of characters (inputs and outputs) associated with an API call to co.generate. A single generation unit may be up to 1000 characters (input + output combined).", 
+                "Classify": "Each text (input) classified counts as one classification. Cohere does not charge for examples provided.", 
+                "Summarize": "Cohere counts generation units based on the total number of characters (inputs and outputs) associated with an API call to co.summarize. A single summarization unit may be up to 2000 characters (input + output combined).", 
+                "Rerank": "Cohere counts a single search unit as a query with up to 100 documents to be ranked. Documents longer than 510 tokens when including the length of the search query will be split up into multiple chunks, where each chunk counts as a singular document." 
+            },
+            "models": [
+                  {
+                      "name": "embed default",
+                      "version": "-",
+                      "description": "-",
+                      "prompt_cost": 1,
+                      "completion_cost": 1,
+                      "cost_currency": "$",
+                      "cost_unit": " / 1K embeddings",
+                      "max_tokens": 8192,
+                      "use_cases": ["Summarization", "Translation", "Question Answering", "Text Completion", "Text Classification"]
+                  }
+                ]
+        }
+    },
+    "Image (Coming Soon)":
+    {
+        "OpenAI": {
+            "url": "https://www.openai.com",
+            "url_pricing": "https://www.openai.com/pricing",
+            "models": [
+                {
+                    "name": "DALL-E 1024x1024",
+                    "version": "1024x1024",
+                    "description": "Build DALL·E directly into your apps to generate and edit novel images and art. Our image models offer three tiers of resolution for flexibility.",
+                    "cost": 0.02,
+                    "cost_unit": " $ / image"
+                },
+                {
+                    "name": "DALL-E 512x512",
+                    "version": "512x512",
+                    "description": "Build DALL·E directly into your apps to generate and edit novel images and art. Our image models offer three tiers of resolution for flexibility.",
+                    "cost": 0.018,
+                    "cost_unit": " $ / image"
+                },
+                {
+                    "name": "DALL-E 256x256",
+                    "version": "256x256",
+                    "description": "Build DALL·E directly into your apps to generate and edit novel images and art. Our image models offer three tiers of resolution for flexibility.",
+                    "cost": 0.016,
+                    "cost_unit": " $ / image"
+                }
+            ]
+        }
+    },
+    "Audio (Coming Soon)":
+    {
+        "OpenAI": {
+            "url": "https://www.openai.com",
+            "url_pricing": "https://www.openai.com/pricing",
+            "models": [
+                {
+                    "name": "Whisper",
+                    "version": "",
+                    "description": "Whisper can transcribe speech into text and translate many languages into English.",
+                    "cost": 0.006,
+                    "cost_unit": " $ / minute"
+                }
+            ]
+        }
+    }
+}
