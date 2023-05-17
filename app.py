@@ -135,3 +135,6 @@ with cost_col:
     cost_estimate = model_cost * total_tokens / 1000
     st.write(f"Running this task once will cost **{model_cost_currency}{round(cost_estimate, 6)}**.")
     st.write(f"Running this task {num_task_volume:,} times will cost **{model_cost_currency}{round(cost_estimate * num_task_volume, 2):,}**.")
+    
+st.write('---')
+st.write('For questions, comments, or suggestions, please contact me directly on LinkedIn https://www.linkedin.com/in/kaankorkmaz/.')
