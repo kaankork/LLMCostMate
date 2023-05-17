@@ -2,6 +2,7 @@ import tiktoken
 import os
 from aleph_alpha_client import Client, TokenizationRequest, DetokenizationRequest
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
@@ -11,9 +12,14 @@ def num_tokens_from_string(string: str, model_name: str) -> int:
     num_tokens = len(encoding.encode(string))
     return num_tokens
 
-def num_tokens_from_string_aleph_alpha(string: str, model_name: str) -> int:
+def num_tokens_from_string_aleph_alpha(string: str, model_name: str, prod: bool) -> int:
     """Returns the number of tokens in a text string."""
-    client = Client(token=os.getenv("AA_TOKEN"))
+    
+    if prod:
+        token = st.secrets["AA_TOKEN"]
+    else:
+        token=os.getenv("AA_TOKEN")
+    client = Client(token)
     params = {
         "prompt": string,
         "tokens": True,
