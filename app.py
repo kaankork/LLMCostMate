@@ -15,6 +15,8 @@ st.set_page_config(
     }
 )
 
+PROD = True
+
 f = open('data/model_metadata.json')
 model_metadata = json.load(f)
 
@@ -101,7 +103,7 @@ with selection_mid_col:
     if selected_provider == "OpenAI":
         num_input_tokens = num_tokens_from_string(input_text, model_name=selected_model)
     elif selected_provider == "Aleph Alpha":
-        num_input_tokens = num_tokens_from_string_aleph_alpha(input_text, model_name=selected_model)
+        num_input_tokens = num_tokens_from_string_aleph_alpha(input_text, model_name=selected_model, prod=PROD)
     # if st.button("Calculate number of tokens", use_container_width=True):
     # st.write(f"Your input text has **{num_input_tokens}** tokens.")
 
