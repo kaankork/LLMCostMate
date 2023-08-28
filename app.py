@@ -59,11 +59,11 @@ connect_col, coffee_col = st.columns(2)
 #     if st.button("Want to contribute? \n\n 🔀 Create a Pull Request", use_container_width=True):
 #         webbrowser.open_new_tab("https://github.com/kaankork/LLMCostMate")
 with connect_col:
-    st.button('Want to connect? \n\n 🔗 Add me on LinkedIn', on_click=open_page, args=('https://www.linkedin.com/in/kaankorkmaz/',))
+    st.button('Want to connect? \n\n 🔗 Add me on LinkedIn', use_container_width=True, on_click=open_page, args=('https://www.linkedin.com/in/kaankorkmaz/',))
     # if st.button("Want to connect? \n\n 🔗 Add me on LinkedIn", use_container_width=True):
     #     webbrowser.open_new_tab("https://www.linkedin.com/in/kaankorkmaz/")
 with coffee_col:
-    st.button('Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee', on_click=open_page, args=('https://www.buymeacoffee.com/kaankorkmaz',))
+    st.button('Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee', use_container_width=True, on_click=open_page, args=('https://www.buymeacoffee.com/kaankorkmaz',))
     # if st.button("Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee", use_container_width=True):
     #     webbrowser.open_new_tab("https://www.buymeacoffee.com/kaankorkmaz")
     
