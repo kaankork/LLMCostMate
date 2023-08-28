@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 from util import num_tokens_from_string, num_tokens_from_string_aleph_alpha
-import streamlit.components.v1 as components
+import streamlit.components.v1 as components, html
 import webbrowser
 
 st.set_page_config(
@@ -15,6 +15,14 @@ st.set_page_config(
         'Report a Bug': None
     }
 )
+
+def open_page(url):
+    open_script= """
+        <script type="text/javascript">
+            window.open('%s', '_blank').focus();
+        </script>
+    """ % (url)
+    html(open_script)
 
 PROD = True
 
@@ -44,17 +52,20 @@ with st.expander("What is LLMCostMate?", expanded=False):
         st.markdown("<div style='text-align: center; width:20px'> <img src='http://www.reactiongifs.com/r/funds.gif' alt='gif' /></div>", unsafe_allow_html=True)
 
 # Contribute, connect, donate
-contribute_col, connect_col, coffee_col = st.columns(3)
+# contribute_col, connect_col, coffee_col = st.columns(3)
+connect_col, coffee_col = st.columns(2)
 
-with contribute_col:
-    if st.button("Want to contribute? \n\n 🔀 Create a Pull Request", use_container_width=True):
-        webbrowser.open_new_tab("https://github.com/kaankork/LLMCostMate")
+# with contribute_col:
+#     if st.button("Want to contribute? \n\n 🔀 Create a Pull Request", use_container_width=True):
+#         webbrowser.open_new_tab("https://github.com/kaankork/LLMCostMate")
 with connect_col:
-    if st.button("Want to connect? \n\n 🔗 Add me on LinkedIn", use_container_width=True):
-        webbrowser.open_new_tab("https://www.linkedin.com/in/kaankorkmaz/")
+    st.button('Want to connect? \n\n 🔗 Add me on LinkedIn', on_click=open_page, args=('https://www.linkedin.com/in/kaankorkmaz/',))
+    # if st.button("Want to connect? \n\n 🔗 Add me on LinkedIn", use_container_width=True):
+    #     webbrowser.open_new_tab("https://www.linkedin.com/in/kaankorkmaz/")
 with coffee_col:
-    if st.button("Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee", use_container_width=True):
-        webbrowser.open_new_tab("https://www.buymeacoffee.com/kaankorkmaz")
+    st.button('Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee', on_click=open_page, args=('https://www.buymeacoffee.com/kaankorkmaz',))
+    # if st.button("Enjoy using LLMCostMate? \n\n ☕ Donate a Coffee", use_container_width=True):
+    #     webbrowser.open_new_tab("https://www.buymeacoffee.com/kaankorkmaz")
     
 
 st.write('---')
